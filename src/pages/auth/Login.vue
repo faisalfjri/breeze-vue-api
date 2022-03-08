@@ -1,5 +1,5 @@
 <script setup>
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { useUsers } from '@/stores/user'
 import { computed, ref } from 'vue'
 import BreezeButton from '@/components/Button.vue'
@@ -9,7 +9,6 @@ import BreezeInput from '@/components/Input.vue'
 import BreezeLabel from '@/components/Label.vue'
 import BreezeValidationErrors from '@/components/ValidationErrors.vue'
 
-const router = useRouter()
 const route = useRoute()
 
 const store = useUsers()
@@ -32,7 +31,6 @@ form.value = store.userLogin
 
 const submitLogin = () => {
     store.login(setErrors, processing)
-    router.push({ path: '/dashboard' })
 }
 </script>
 
