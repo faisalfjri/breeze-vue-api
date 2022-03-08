@@ -68,7 +68,10 @@ const submitLogin = () => {
 
             <div class="block mt-4">
                 <label class="flex items-center">
-                    <BreezeCheckbox name="remember" :checked="form.remember" />
+                    <BreezeCheckbox
+                        name="remember"
+                        :checked="form.remember"
+                        v-model="form.remember" />
                     <span class="ml-2 text-sm text-gray-600">Remember me</span>
                 </label>
             </div>
