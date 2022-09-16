@@ -1,11 +1,11 @@
 <script setup>
 import { useUsers } from '@/stores/user'
 import { computed, ref } from 'vue'
-import BreezeButton from '@/components/Button.vue'
-import BreezeGuestLayout from '@/layouts/Guest.vue'
-import BreezeInput from '@/components/Input.vue'
-import BreezeLabel from '@/components/Label.vue'
-import BreezeValidationErrors from '@/components/ValidationErrors.vue'
+import PrimaryButton from '@/components/PrimaryButton.vue'
+import GuestLayout from '@/layouts/GuestLayout.vue'
+import TextInput from '@/components/TextInput.vue'
+import InputLabel from '@/components/InputLabel.vue'
+import ValidationErrors from '@/components/ValidationErrors.vue'
 
 const store = useUsers()
 
@@ -29,13 +29,13 @@ const submitRegister = () => {
 </script>
 
 <template>
-    <BreezeGuestLayout>
-        <BreezeValidationErrors class="mb-4" :errors="errors" />
+    <GuestLayout>
+        <ValidationErrors class="mb-4" :errors="errors" />
 
         <form @submit.prevent="submitRegister">
             <div>
-                <BreezeLabel for="name" value="Name" />
-                <BreezeInput
+                <InputLabel for="name" value="Name" />
+                <TextInput
                     id="name"
                     type="text"
                     class="mt-1 block w-full"
@@ -46,8 +46,8 @@ const submitRegister = () => {
             </div>
 
             <div class="mt-4">
-                <BreezeLabel for="email" value="Email" />
-                <BreezeInput
+                <InputLabel for="email" value="Email" />
+                <TextInput
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
@@ -57,8 +57,8 @@ const submitRegister = () => {
             </div>
 
             <div class="mt-4">
-                <BreezeLabel for="password" value="Password" />
-                <BreezeInput
+                <InputLabel for="password" value="Password" />
+                <TextInput
                     id="password"
                     type="password"
                     class="mt-1 block w-full"
@@ -68,10 +68,10 @@ const submitRegister = () => {
             </div>
 
             <div class="mt-4">
-                <BreezeLabel
+                <InputLabel
                     for="password_confirmation"
                     value="Confirm Password" />
-                <BreezeInput
+                <TextInput
                     id="password_confirmation"
                     type="password"
                     class="mt-1 block w-full"
@@ -87,10 +87,10 @@ const submitRegister = () => {
                     Already registered?
                 </router-link>
 
-                <BreezeButton class="ml-4" :processing="processing">
+                <PrimaryButton class="ml-4" :processing="processing">
                     Register
-                </BreezeButton>
+                </PrimaryButton>
             </div>
         </form>
-    </BreezeGuestLayout>
+    </GuestLayout>
 </template>

@@ -2,12 +2,12 @@
 import { useRoute } from 'vue-router'
 import { useUsers } from '@/stores/user'
 import { computed, ref } from 'vue'
-import BreezeButton from '@/components/Button.vue'
-import BreezeCheckbox from '@/components/Checkbox.vue'
-import BreezeGuestLayout from '@/layouts/Guest.vue'
-import BreezeInput from '@/components/Input.vue'
-import BreezeLabel from '@/components/Label.vue'
-import BreezeValidationErrors from '@/components/ValidationErrors.vue'
+import PrimaryButton from '@/components/PrimaryButton.vue'
+import Checkbox from '@/components/Checkbox.vue'
+import GuestLayout from '@/layouts/GuestLayout.vue'
+import TextInput from '@/components/TextInput.vue'
+import InputLabel from '@/components/InputLabel.vue'
+import ValidationErrors from '@/components/ValidationErrors.vue'
 
 const route = useRoute()
 
@@ -35,17 +35,17 @@ const submitLogin = () => {
 </script>
 
 <template>
-    <BreezeGuestLayout>
+    <GuestLayout>
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
 
-        <BreezeValidationErrors class="mb-4" :errors="errors" />
+        <ValidationErrors class="mb-4" :errors="errors" />
 
         <form @submit.prevent="submitLogin">
             <div>
-                <BreezeLabel for="email" value="Email" />
-                <BreezeInput
+                <InputLabel for="email" value="Email" />
+                <TextInput
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
@@ -56,8 +56,8 @@ const submitLogin = () => {
             </div>
 
             <div class="mt-4">
-                <BreezeLabel for="password" value="Password" />
-                <BreezeInput
+                <InputLabel for="password" value="Password" />
+                <TextInput
                     id="password"
                     type="password"
                     class="mt-1 block w-full"
@@ -68,7 +68,7 @@ const submitLogin = () => {
 
             <div class="block mt-4">
                 <label class="flex items-center">
-                    <BreezeCheckbox
+                    <Checkbox
                         name="remember"
                         :checked="form.remember"
                         v-model="form.remember" />
@@ -82,10 +82,10 @@ const submitLogin = () => {
                     class="underline text-sm text-gray-600 hover:text-gray-900">
                     Forgot your password?
                 </router-link>
-                <BreezeButton class="ml-4" :processing="processing">
+                <PrimaryButton class="ml-4" :processing="processing">
                     Login
-                </BreezeButton>
+                </PrimaryButton>
             </div>
         </form>
-    </BreezeGuestLayout>
+    </GuestLayout>
 </template>

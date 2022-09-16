@@ -1,11 +1,11 @@
 <script setup>
 import { useUsers } from '@/stores/user'
 import { computed, ref } from 'vue'
-import BreezeButton from '@/components/Button.vue'
-import BreezeGuestLayout from '@/layouts/Guest.vue'
-import BreezeInput from '@/components/Input.vue'
-import BreezeLabel from '@/components/Label.vue'
-import BreezeValidationErrors from '@/components/ValidationErrors.vue'
+import PrimaryButton from '@/components/PrimaryButton.vue'
+import GuestLayout from '@/layouts/GuestLayout.vue'
+import TextInput from '@/components/TextInput.vue'
+import InputLabel from '@/components/InputLabel.vue'
+import ValidationErrors from '@/components/ValidationErrors.vue'
 
 const store = useUsers()
 
@@ -29,7 +29,7 @@ const submit = () => {
 </script>
 
 <template>
-    <BreezeGuestLayout>
+    <GuestLayout>
         <div class="mb-4 text-sm text-gray-600">
             Forgot your password? No problem. Just let us know your email
             address and we will email you a password reset link that will allow
@@ -40,12 +40,12 @@ const submit = () => {
             {{ status }}
         </div>
 
-        <BreezeValidationErrors class="mb-4" :errors="errors" />
+        <ValidationErrors class="mb-4" :errors="errors" />
 
         <form @submit.prevent="submit">
             <div>
-                <BreezeLabel for="email" value="Email" />
-                <BreezeInput
+                <InputLabel for="email" value="Email" />
+                <TextInput
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
@@ -56,10 +56,10 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <BreezeButton class="ml-4" :processing="processing">
+                <PrimaryButton class="ml-4" :processing="processing">
                     Email Password Reset Link
-                </BreezeButton>
+                </PrimaryButton>
             </div>
         </form>
-    </BreezeGuestLayout>
+    </GuestLayout>
 </template>
