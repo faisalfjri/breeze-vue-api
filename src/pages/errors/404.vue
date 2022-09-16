@@ -1,6 +1,6 @@
 <script setup>
 import { useUsers } from '@/stores/user'
-import BreezeApplicationLogo from '@/components/ApplicationLogo.vue'
+import ApplicationLogo from '@/components/ApplicationLogo.vue'
 
 const store = useUsers()
 
@@ -15,7 +15,7 @@ const auth = store.authUser
                 <div
                     class="mx-auto flex items-center justify-center h-12 w-auto">
                     <router-link to="/">
-                        <BreezeApplicationLogo
+                        <ApplicationLogo
                             class="w-20 h-20 fill-current text-gray-500" />
                     </router-link>
                 </div>

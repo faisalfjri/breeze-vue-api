@@ -1,5 +1,5 @@
 <script setup>
-import BreezeApplicationLogo from '@/components/ApplicationLogo.vue'
+import ApplicationLogo from '@/components/ApplicationLogo.vue'
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import BreezeApplicationLogo from '@/components/ApplicationLogo.vue'
         class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
         <div>
             <router-link to="/">
-                <BreezeApplicationLogo
+                <ApplicationLogo
                     class="w-20 h-20 fill-current text-gray-500" />
             </router-link>
         </div>

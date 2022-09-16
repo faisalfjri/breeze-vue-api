@@ -1,11 +1,11 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue'
 import { useUsers } from '@/stores/user'
-import BreezeApplicationLogo from '@/components/ApplicationLogo.vue'
-import BreezeDropdown from '@/components/Dropdown.vue'
-import BreezeDropdownLink from '@/components/DropdownLink.vue'
-import BreezeNavLink from '@/components/NavLink.vue'
-import BreezeResponsiveNavLink from '@/components/ResponsiveNavLink.vue'
+import ApplicationLogo from '@/components/ApplicationLogo.vue'
+import Dropdown from '@/components/Dropdown.vue'
+import DropdownLink from '@/components/DropdownLink.vue'
+import NavLink from '@/components/NavLink.vue'
+import ResponsiveNavLink from '@/components/ResponsiveNavLink.vue'
 
 const showingNavigationDropdown = ref(false)
 
@@ -35,7 +35,7 @@ const submitLogout = () => {
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <router-link to="/">
-                                    <BreezeApplicationLogo
+                                    <ApplicationLogo
                                         class="block h-9 w-auto" />
                                 </router-link>
                             </div>
@@ -47,12 +47,12 @@ const submitLogout = () => {
                                     to="/dashboard"
                                     custom
                                     v-slot="{ href, isActive, navigate }">
-                                    <BreezeNavLink
+                                    <NavLink
                                         :href="href"
                                         :active="isActive"
                                         @click="navigate">
                                         Dashboard
-                                    </BreezeNavLink>
+                                    </NavLink>
                                 </router-link>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ const submitLogout = () => {
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
-                                <BreezeDropdown align="right" width="48">
+                                <Dropdown align="right" width="48">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button
@@ -83,12 +83,12 @@ const submitLogout = () => {
                                     </template>
 
                                     <template #content>
-                                        <BreezeDropdownLink
+                                        <DropdownLink
                                             @click="submitLogout">
                                             Log Out
-                                        </BreezeDropdownLink>
+                                        </DropdownLink>
                                     </template>
-                                </BreezeDropdown>
+                                </Dropdown>
                             </div>
                         </div>
 
@@ -143,12 +143,12 @@ const submitLogout = () => {
                             to="/dashboard"
                             custom
                             v-slot="{ href, isActive, navigate }">
-                            <BreezeResponsiveNavLink
+                            <ResponsiveNavLink
                                 :href="href"
                                 :active="isActive"
                                 @click="navigate">
                                 Dashboard
-                            </BreezeResponsiveNavLink>
+                            </ResponsiveNavLink>
                         </router-link>
                     </div>
 
@@ -168,11 +168,11 @@ const submitLogout = () => {
                                 to="/"
                                 custom
                                 v-slot="{ href, navigate }">
-                                <BreezeResponsiveNavLink
+                                <ResponsiveNavLink
                                     :href="href"
                                     @click="navigate">
                                     Log Out
-                                </BreezeResponsiveNavLink>
+                                </ResponsiveNavLink>
                             </router-link>
                         </div>
                     </div>

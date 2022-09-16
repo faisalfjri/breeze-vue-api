@@ -1,9 +1,9 @@
 <script setup>
-import BreezeAuthenticatedLayout from '@/layouts/Authenticated.vue'
+import AuthenticatedLayout from '@/layouts/AuthenticatedLayout.vue'
 </script>
 
 <template>
-    <BreezeAuthenticatedLayout>
+    <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
@@ -19,5 +19,5 @@ import BreezeAuthenticatedLayout from '@/layouts/Authenticated.vue'
                 </div>
             </div>
         </div>
-    </BreezeAuthenticatedLayout>
+    </AuthenticatedLayout>
 </template>

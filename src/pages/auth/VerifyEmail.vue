@@ -2,8 +2,8 @@
 import { onBeforeMount, computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUsers } from '@/stores/user'
-import BreezeButton from '@/components/Button.vue'
-import BreezeGuestLayout from '@/layouts/Guest.vue'
+import PrimaryButton from '@/components/PrimaryButton.vue'
+import GuestLayout from '@/layouts/GuestLayout.vue'
 
 const router = useRouter()
 
@@ -31,7 +31,7 @@ const submitLogout = () => {
 </script>
 
 <template>
-    <BreezeGuestLayout>
+    <GuestLayout>
         <div class="mb-4 text-sm text-gray-600">
             Thanks for signing up! Before getting started, could you verify your
             email address by clicking on the link we just emailed to you? If you
@@ -45,9 +45,9 @@ const submitLogout = () => {
 
         <form @submit.prevent="submit">
             <div class="mt-4 flex items-center justify-between">
-                <BreezeButton :processing="processing">
+                <PrimaryButton :processing="processing">
                     Resend Verification Email
-                </BreezeButton>
+                </PrimaryButton>
 
                 <a
                     @click="submitLogout"
@@ -58,5 +58,5 @@ const submitLogout = () => {
                 >
             </div>
         </form>
-    </BreezeGuestLayout>
+    </GuestLayout>
 </template>
