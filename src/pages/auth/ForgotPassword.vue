@@ -47,9 +47,9 @@ const submit = () => {
                 <InputLabel for="email" value="Email" />
                 <TextInput
                     id="email"
+                    v-model="form.email"
                     type="email"
                     class="mt-1 block w-full"
-                    v-model="form.email"
                     required
                     autofocus
                     autocomplete="username" />

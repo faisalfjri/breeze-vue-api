@@ -38,7 +38,7 @@ const submitLogout = () => {
             didn't receive the email, we will gladly send you another.
         </div>
 
-        <div class="mb-4 font-medium text-sm text-green-600" v-if="status">
+        <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             A new verification link has been sent to the email address you
             provided during registration.
         </div>
@@ -50,10 +50,10 @@ const submitLogout = () => {
                 </PrimaryButton>
 
                 <a
-                    @click="submitLogout"
                     href="#"
                     as="button"
                     class="underline text-sm text-gray-600 hover:text-gray-900"
+                    @click="submitLogout"
                     >Log Out</a
                 >
             </div>

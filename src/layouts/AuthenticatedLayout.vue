@@ -35,8 +35,7 @@ const submitLogout = () => {
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <router-link to="/">
-                                    <ApplicationLogo
-                                        class="block h-9 w-auto" />
+                                    <ApplicationLogo class="block h-9 w-auto" />
                                 </router-link>
                             </div>
 
@@ -44,9 +43,9 @@ const submitLogout = () => {
                             <div
                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <router-link
+                                    v-slot="{ href, isActive, navigate }"
                                     to="/dashboard"
-                                    custom
-                                    v-slot="{ href, isActive, navigate }">
+                                    custom>
                                     <NavLink
                                         :href="href"
                                         :active="isActive"
@@ -83,8 +82,7 @@ const submitLogout = () => {
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink
-                                            @click="submitLogout">
+                                        <DropdownLink @click="submitLogout">
                                             Log Out
                                         </DropdownLink>
                                     </template>
@@ -95,11 +93,11 @@ const submitLogout = () => {
                         <!-- Hamburger -->
                         <div class="-mr-2 flex items-center sm:hidden">
                             <button
+                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                                 @click="
                                     showingNavigationDropdown =
                                         !showingNavigationDropdown
-                                "
-                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+                                ">
                                 <svg
                                     class="h-6 w-6"
                                     stroke="currentColor"
@@ -140,9 +138,9 @@ const submitLogout = () => {
                     class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
                         <router-link
+                            v-slot="{ href, isActive, navigate }"
                             to="/dashboard"
-                            custom
-                            v-slot="{ href, isActive, navigate }">
+                            custom>
                             <ResponsiveNavLink
                                 :href="href"
                                 :active="isActive"
@@ -165,9 +163,9 @@ const submitLogout = () => {
 
                         <div class="mt-3 space-y-1">
                             <router-link
+                                v-slot="{ href, navigate }"
                                 to="/"
-                                custom
-                                v-slot="{ href, navigate }">
+                                custom>
                                 <ResponsiveNavLink
                                     :href="href"
                                     @click="navigate">
@@ -180,7 +178,7 @@ const submitLogout = () => {
             </nav>
 
             <!-- Page Heading -->
-            <header class="bg-white shadow" v-if="$slots.header">
+            <header v-if="$slots.header" class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
                 </div>
