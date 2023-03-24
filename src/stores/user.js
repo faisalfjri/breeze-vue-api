@@ -6,7 +6,6 @@ const csrf = () => axios.get('/sanctum/csrf-cookie')
 
 export const useUsers = defineStore('users', {
     state: () => ({
-        userLogin: useStorage('userLogin', {}),
         userData: useStorage('userData', []),
         authStatus: useStorage('authStatus', []),
     }),
@@ -57,13 +56,13 @@ export const useUsers = defineStore('users', {
                 })
         },
 
-        async login(setErrors, processing) {
+        async login(form, setErrors, processing) {
             await csrf()
 
             processing.value = true
 
             axios
-                .post('/login', this.userLogin)
+                .post('/login', form.value)
                 .then(response => {
                     this.authStatus = response.status
                     processing.value = false
@@ -138,9 +137,6 @@ export const useUsers = defineStore('users', {
                 .post('/logout')
                 .then(() => {
                     this.$reset()
-                    if (!this.userLogin.remember) {
-                        this.userLogin = {}
-                    }
                     this.userData = {}
                     this.authStatus = []
 

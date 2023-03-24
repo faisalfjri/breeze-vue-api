@@ -27,10 +27,8 @@ const errors = computed(() => setErrors.value)
 
 const status = route.query.reset?.length > 0 ? atob(route.query.reset) : null
 
-form.value = store.userLogin
-
 const submitLogin = () => {
-    store.login(setErrors, processing)
+    store.login(form, setErrors, processing)
 }
 </script>
 
