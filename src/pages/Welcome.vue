@@ -83,7 +83,7 @@ const auth = store.authUser
                     </div>
 
                     <div
-                        class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
+                        class="p-6 border-t border-gray-100 dark:border-gray-700 md:border-t-0 md:border-l">
                         <div class="flex items-center">
                             <svg
                                 fill="none"
@@ -119,7 +119,7 @@ const auth = store.authUser
                     </div>
 
                     <div
-                        class="p-6 border-t border-gray-200 dark:border-gray-700">
+                        class="p-6 border-t border-gray-100 dark:border-gray-700">
                         <div class="flex items-center">
                             <svg
                                 fill="none"
@@ -153,7 +153,7 @@ const auth = store.authUser
                     </div>
 
                     <div
-                        class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
+                        class="p-6 border-t border-gray-100 dark:border-gray-700 md:border-l">
                         <div class="flex items-center">
                             <svg
                                 fill="none"
